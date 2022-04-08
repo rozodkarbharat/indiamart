@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .priceDiv{
+            display:flex;
+            justify-content: space-between;
+        }
+        #Cart_container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto auto auto;
+            grid-gap:40px;
+            margin: auto;
+        }
+        #total_price_div{
+            display:flex;
+            padding: 10px;
+        }
+        #buynow{
+            margin:40px;
+            background-color: rgb(250,137,0);
+            padding: 15px 32px;
+            font-size: 18px;
+            margin-top: -80px;
+        }
+        #Cart_container>div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        justify-content: center;
+    }
+    #Cart_container>div>p{
+        text-align: center;
+        font-size: x-large;
+    }
+    p:nth-child(3) {
+    font-weight: bold;
+    }
+    p:nth-child(5) {
+        font-weight: bold;
+    }
+    .subtotal{
+        margin-right: 10px;
+        margin-top: -40px;
+    }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <hr>
+    <div id="Cart_container"></div>
+    <div id="total_price_div">
+        <h1 class="subtotal">Subtotal is Rs. : </h1>
+        <h1 class="subtotal" id="totalDis">0</h1>
+        <a href="payment/payment.html">
+            <button  id="buynow"> Buy Now </button>
+        </a>
+        
+    </div>
+   
+   
+    
+</body>
+</html>
+
+<script>
+var cartArr =JSON.parse(localStorage.getItem("cartItem"));
+// console.log(shopping_cart);
+function displayData(cartArr)
+{
+    document.querySelector("#Cart_container").innerHTML = "";
+    cartArr.map(function(elem,index,array) // Mapping cart item details
+    {
+
+    var mainDiv = document.createElement("div");
+
+    var catagory = document.createElement("p");
+    catagory.innerText = elem.catagory;
+
+    var img = document.createElement("img");
+    img.setAttribute("src",elem.image_url);
+
+    var name = document.createElement("p");
+    name.innerText = elem.name;
+
+    var company = document.createElement("p");
+    company.innerText = elem.company;
+
+    var price = document.createElement("p");
+    price.innerText = "Rs. " +elem.price + " "+ " " +" Qty "+":" +elem.qty;
+
+    
+    var btn1 = document.createElement("button");
+    btn1.innerText = "Add +1 ";
+    btn1.addEventListener("click",function(){
+        increaseQty(index);
+    });
+
+    var btn2 = document.createElement("button");
+    btn2.innerText = "Minus -1 ";
+    btn2.addEventListener("click",function(){
+        decreaseQty(index);
+    });
+
+
+
+    mainDiv.append(img,catagory,name,company,price,btn1,btn2);
+    document.querySelector("#Cart_container").append(mainDiv);
+    
+   
+
+    });
+}
+
+function increaseQty(index)
+{
+    cartArr[index].qty++;
+    localStorage.setItem("cartItem",JSON.stringify(cartArr));
+    // console.log(cartArr);
+    displayData(cartArr);
+    showTotal();
+}
+
+function decreaseQty(index)
+{
+    cartArr[index].qty--;
+    localStorage.setItem("cartItem",JSON.stringify(cartArr));
+    // console.log(cartArr);
+    displayData(cartArr);
+    showTotal();
+}
+
+function showTotal()
+{
+    var total = cartArr.reduce(function(acc,elem){
+        return acc + (elem.price)*(elem.qty);
+
+    },0);
+        // console.log(total);
+        document.getElementById("totalDis").textContent = total;
+}
+
+displayData(cartArr);
+showTotal();
+</script>

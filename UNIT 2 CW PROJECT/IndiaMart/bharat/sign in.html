@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Shizuru&display=swap');
+       #main{
+        
+        align-content: center;
+     
+        width: 100%;
+        margin: auto;
+    }
+    #main>h1{
+        text-align: center;
+        color: blueviolet;
+        font-weight: bolder;
+        
+    }
+    #number{
+        display: block;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 20px;
+         
+    }
+    #submit_form>input{
+        background-color: rgb(0, 166, 153);
+        width: 250px;
+        height: auto;
+        color: white;
+        font-size: 17px;
+         cursor: pointer;
+         height: auto;
+         padding: 0;
+
+
+      
+    }
+    img{
+        height: 40px;
+        width: 45px;
+        border: 1px solid blue;
+        
+        
+    }
+    #google{
+        display: flex;
+        /* height: auto; */
+        cursor: pointer;
+         /* margin-left:17%; */
+           display: flex;
+  justify-content: center;
+height: 50px;
+  
+        
+    }
+    #google>h2{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        background-color: rgb(70,133,245);
+        color: white;
+       
+        height: 40px;
+       
+        
+    }
+    .or{
+         text-align: center;
+         color: rgb(35, 116, 49);
+         font-family: 'Montserrat', sans-serif;
+         font-weight: bolder;
+    }
+    p{
+        text-align: center;
+    }
+    #signin_button{
+           display: flex;
+  justify-content: center;
+  
+    }
+    #submit_form{
+     display: flex;
+  justify-content: center;
+    }
+    /* #id01{
+        display: block;
+    } */
+    @media all and (max-width:380px){
+     img{
+        height: 30px;
+        width: 38px;
+        border: 1px solid blue;
+        
+        
+    }
+      #google>h2{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        background-color: rgb(70,133,245);
+        color: white;
+       
+        height: 30px;
+        font-size: 20px;  
+    }
+       
+    }
+</style>
+<body>
+
+    <div class="w3-container">
+        <h2>Login to Continue...</h2>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">
+            Click here to Login</button>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                <div id="main">
+                    <h1>Sign In</h1>
+                    <form id="form">
+                        <p>Mobile Number</p>
+                        <div id="signin_button">
+                            <input type="number" placeholder="Enter your mobile number" id="number">
+                        </div>
+                        <div id="submit_form"><input type="submit"></div>
+                
+                    </form>
+                    <h2 class="or">OR</h2>
+                    
+                
+                    <div id="google">
+                        <img src="google.jpg" alt="">
+                        <h2>Continue With Google</h2>
+                    </div>
+                    <h2 class="or">OR</h2>
+                    <p id="signup">New user? Click to Sign up</p>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+     document.querySelector("#form").addEventListener("submit", submitform)
+        var data = []
+        function submitform(e) {
+            e.preventDefault()
+            var number = document.querySelector("#number").value
+            data.push(number)
+            
+            localStorage.setItem("userdata", JSON.stringify(data))
+            window.location.href = "\otp1.html"
+            console.log(number)
+        }
+       document.getElementById("signup").addEventListener("click",function(){
+            window.location.href="\signup.html"
+        })
+      document.getElementById("signup").style.cursor="pointer"
+       
+</script>

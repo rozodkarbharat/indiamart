@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+        #main1{ 
+            
+            margin-top: 10%;
+            
+        }
+        #otp>button{
+            display: flex;
+             background-color: teal;
+        width: 130px;
+        height: 30px;
+        color: white;
+        font-size: 17px;
+        margin-left: 40%;
+         cursor: pointer;
+         border-radius: 20px;
+         
+        text-align: center;
+        
+        }
+        #mobile{
+            display: inline-flex;
+            font-weight: bold;
+        }
+        h2{
+            color: blue;
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Montserrat', sans-serif;
+        }
+        p{
+            text-align: center;
+            align-content: center;
+        }
+
+    #id01{
+        display: block;
+        
+    }
+    .w3-container1{
+        height: 250px;
+            box-shadow: 10px 10px 8px 10px #888888;
+            border-radius: 40%;
+    }
+    @media all and (max-width:390px){
+       .w3-container1{
+        height: 280px;
+    }
+        #otp>button{
+            margin-left: 32%;
+        }
+ }
+</style>
+
+<body>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container1">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                        <div id="main1">
+                            <h2>Get connected to varified sellers</h2>
+                            <p>Click below to get 4 digit One Time Password (OTP)
+                                on your Mobile Number +91<span id="mobile"></span> via SMS</p>
+                            <div id="otp">
+                                <button>Generate otp</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+<script>
+     document.querySelector("#otp").addEventListener("click", generateotp)
+        function generateotp(e) {
+            e.preventDefault()
+            var otp= Math.floor(Math.random() * 10000)
+            alert("otp" + " " + otp)
+            localStorage.setItem("otp",JSON.stringify(otp))
+            window.location.href="\vverifyotp.html"
+           
+        }
+        
+        var number = JSON.parse(localStorage.getItem("userdata"))[0]
+        console.log(number)
+        document.querySelector("#mobile").innerHTML = number
+</script>

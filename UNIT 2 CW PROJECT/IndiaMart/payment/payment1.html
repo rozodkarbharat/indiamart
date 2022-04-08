@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="payment6.css">
+</head>
+
+<body>
+    <form action="action">
+        <h1>Payment</h1>
+
+        <label for="name"> Card holder Name</label><br>
+
+        <input class="box1" type="text" name="name" id="name" placeholder="Enter Name"><br>
+        <label for="Pemail">Email</label><br>
+        <input class="boxl" type="email" name="email" id="email" placeholder="Enter Email"><br>
+        <label for="cardnum"> Card Number</label><br>
+        <input class="box1" type="number" name="number" id="number" placeholder="1234 1234 1234 1234"><br>
+
+        <div class="div1">
+
+            <label for="cardex"> Card expiry month</label><br>
+
+            <input class="box2" type="month" name="month" id="month" placeholder="month & year">
+        </div>
+
+        <!-- <div class="div1">
+
+            <label for="cardye"> Card expiry year</label><br>
+
+            <input class="box2" type="year" name="year" id="year" placeholder="yyyy"><br>
+        </div> -->
+
+        <div class="div1">
+
+            <label for="cardCVC"> Card CVV</label><br>
+
+            <input class="box2" type="cvc" name="cvc" id="CVC" placeholder="" cc><br>
+
+        </div>
+
+        <!-- <button class="btn" id="paynow" type="button" > Pay Now</button> -->
+<!-- ======= -->
+        <button class="btn" id="paynow" type="button"> Pay Now</button>
+<!-- >>>>>>> Stashed changes -->
+        <a href="/IndiaMart/header_&_mapping.html">
+            <button class="btn" type="button"> Close</button>
+        </a>
+        
+    </form>
+</body>
+
+</html>
+<script>
+// <<<<<<< Updated upstream
+ var btn=document.querySelector("#paynow")
+ btn.style.cursor="pointer"
+ btn.addEventListener("click",function(){
+ 
+ 
+
+//  document.querySelector("#paynow").addEventListener("click",function(){
+// >>>>>>> Stashed changes
+     alert("Payment Successful! your order has been placed");
+ })
+ 
+</script>

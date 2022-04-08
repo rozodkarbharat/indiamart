@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #header{
+        position: fixed;
+        background-color: rgb(40,116,240);
+        width: 100%;
+        
+    }
+    #header>img{
+        width: 80px;
+        height:40px;
+        vertical-align: middle;
+        margin-left: 50px;
+    }
+    #payment>div:first-child{
+        background-color: rgb(40,116,240);
+        
+        height: 30px;
+    }
+    #payment>div:first-child>h4{
+           color: white;
+          padding-top: 5px;
+          padding-left: 7%;
+          font-family: sans-serif
+          
+    }
+    #payment>div:nth-child(2)>p{
+        padding-left: 7%;
+       /* margin-left: 100px; */
+        
+        /* border: 0.5px solid red; */
+     } 
+     #payment>div:nth-child(2)>img{
+        /* padding-left: 7%; */
+       margin-top: 50px;
+       height: 100px;
+       
+        
+        /* border: 0.5px solid red; */
+    } */
+    #upi{
+        display:flex;
+    }
+     #payment>div:nth-child(3)>p{
+        padding-left: 7%;
+        /* border: 0.5px solid red; */
+    }
+     #payment>div:nth-child(4)>p{
+        padding-left: 7%;
+        /* border: 0.5px solid red; */
+    }
+     #payment>div:nth-child(5)>p{
+        padding-left: 7%;
+        /* border: 0.5px solid red; */
+    }
+     #payment>div:nth-child(6)>p{
+        padding-left: 7%;
+        /* border: 0.5px solid red; */
+    }
+       #payment>div:nth-child(7){
+        padding-left: 7%;
+        /* border: 1px solid red; */
+    }
+    #payment>div:nth-child(2)>img{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        
+    }
+    #payment>div:nth-child(3)>img{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        
+    }
+    /* #payment>div:nth-child(2)>p{
+    display: flex;
+    }
+    #payment>div:nth-child(2){
+        display: inline-block;} */
+    #price_details>div>h4{
+        color: rgb(157,146,140);
+    }
+
+  
+</style>
+<body>
+    <div>
+        <!-- Header -->
+        <!-- <div id="header">
+            <img src="\images\imart-logo-web-500x500.jpg" alt="">
+        </div> -->
+        <!-- Payment option -->
+        <div id="payment">
+           <div> 
+               
+               <h4>PAYMENT OPTION</h4>
+           </div>
+           <div id="upi">
+                <!-- <img src="\images\Payments Logo animation.gif" alt=""> -->
+                <!-- <p>UPI</p>
+                <hr> -->
+           </div>
+           <div>
+               <!-- <img src="\images\Payments Logo animation.gif" alt=""> -->
+            <!-- <p>WALLET</p><hr>
+            </div> -->
+           <div id="card">
+            <p >Credit/Debit/ATM card</p><hr>
+            </div>
+           <!-- <div>
+            <p>Net Banking</p><hr>
+            </div> -->
+           <!-- <div>
+            <p>EMI (Easy Instalment)</p><hr>
+            </div> -->
+           <!-- <div>
+            <p>Cash on Delivery</p><hr>
+            </div> -->
+           <!-- <div></div>
+           <div></div> -->
+        </div>
+        <!-- Price details -->
+        <!-- <div id="price_details">
+           <div>
+            <h4>PRICE DETAILS</h4>
+            </div>
+           
+        </div> -->
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#card").addEventListener("click",function(){
+        window.location.href="\payment1.html"
+    })
+</script>

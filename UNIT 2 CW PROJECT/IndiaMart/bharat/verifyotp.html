@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ #mainbox{  
+  
+     width: 30%;
+    margin: auto;
+   
+    
+ }
+ #exit{
+     color: white;
+ }
+ div div{
+     padding-top: 10px;
+     margin: auto;
+     text-align: center; 
+ }
+  #otpbox{
+     width: 200px;
+     height: 25px;
+   
+ }
+ #otpbutton{
+     font-weight: bolder;
+    height: 40px;
+   width: 200px;
+   margin-top: 10px;
+  background-color:  rgb(70,133,245);
+  color: beige;
+  border-style: hidden;
+  border-radius: 20%;
+ } 
+   #id01{
+        /* display: block; */
+        
+    }
+    .w3-container{
+        height: 250px;
+        background-color: gray;
+        width: 60%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 40%;
+    }
+@media all and (max-width:380px){
+    #mainbox{  
+   
+     width: 100%;
+    margin: auto;
+    
+    
+ }
+      #otpbox{
+     width: 150px;
+     height: 20px;
+     /* margin-left: 10%; */
+    margin-left: 10%;
+     
+ }
+ #otpbutton{
+    height: 25px;
+     width: 150px;
+    margin-left: 10%;
+   /* margin-left: 10%; */
+  
+ }
+ div div{
+ /* margin-left:20% */
+ /* margin: auto; */
+     
+ }
+}
+@media all and (min-width:381px) and (max-width:700px){
+    #mainbox{  
+   
+     width: 100%;
+    margin: auto;
+    
+    
+ }
+      #otpbox{
+     width: 180px;
+     height: 25px;
+     margin-left: 20%;
+ 
+     
+ }
+ #otpbutton{
+    height: 30px;
+     width: 180px;
+   
+   margin-left: 20%;
+  
+ }
+ div div{
+ /* margin-left:20% */
+ /* margin: auto; */
+     
+ }
+}
+</style>
+<body>
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span id="exit" onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+              
+                    <div id="mainbox">
+                           <div><input id="otpbox" type="number" placeholder="Enter Otp"></div>
+                           <div><button id="otpbutton">Validate Otp</button></div>
+                      </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.querySelector("#otpbutton").addEventListener("click",function(){
+        var otp=document.querySelector("#otpbox").value
+        // var otp1= otp[0].map(Number)
+        var otp2=JSON.parse(localStorage.getItem("otp"))
+        
+        if(otp2==otp)
+        {
+            alert("login success")
+            document.querySelector("#id01").style.display="none"
+            window.location.href="http://127.0.0.1:5502/IndiaMart/header_&_mapping.html"
+        }
+        else {
+            alert("Wrong Otp")
+        }
+       
+      
+    })
+</script>
