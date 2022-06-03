@@ -1,5 +1,5 @@
 
-<h1>Porter Clone</h1>
+<h1>IniaMart Clone</h1>
 <p>A web application for wholesale sellers showing there products information</p>
 
 <h3>features:-</h3>
