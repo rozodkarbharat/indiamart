@@ -1,5 +1,6 @@
 
 <h1>IndiaMart Clone</h1>
+<a href="https://indiamartcloned.netlify.app/"><p>View Demo<p/></a>
 <p>A web application for wholesale sellers showing there products information</p>
 
 <h3>features:-</h3>
